@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 import "../../../styles/index.css";
 import Pwa from "./Pwa";
+import HeaderContainer from "../shared/Header";
+import { Layout } from "antd";
 
 
 export const metadata: Metadata = {
@@ -14,7 +16,10 @@ export default function PublicLayout({ children }: { children: ReactNode }) {
         <html lang="en">
             <body>
                 <Pwa>
-                    {children}
+                    <Layout>
+                        <HeaderContainer />
+                        {children}
+                    </Layout>
                 </Pwa>
             </body>
         </html>
